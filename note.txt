@@ -1,0 +1,20 @@
+const submitHandler = (e) => {
+    e.preventDefault()
+    setMoodList(e.target.value);
+    let data = {
+      genre: moodList
+    }
+
+    fetch('http://localhost:5000/recommedsong', {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json"
+   },
+      body: JSON.stringify(data)
+    }).then(async (res) => {
+      console.log(res);
+      let text = await res.json()
+      console.log(text)
+    })
+  }

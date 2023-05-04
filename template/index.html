@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .result {
+    margin: auto;
+    width: 35%;
+    border: 1px solid #ccc;
+    }
+    </style>
+</head>
+<body>
+    <form method="post" action="/">
+      <input type="radio" name="genre" value ='Pop'>Pop<br>
+      <input type="radio" name="genre" value ='Rock'>Rock<br>
+      <input type="radio" name="genre" value ='Meditating'>Meditating<br>
+      <input type="radio" name="genre" value ='Soft'>Soft Rock<br>
+      <input type="radio" name="genre" value ='Bollywood'>Bollywood<br>
+      <br>
+      <input type="submit" name="submit" value="Get Recommendation">
+    <br>
+    <table>
+      <thead>
+        <tr>
+          {% for col in column_names1 %}
+          <th>
+            {{col}}
+          </th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in row_data1 %}
+        <tr>
+          {% for col, row_ in zip(column_names1, row) %}
+          <td>{{row_}}</td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </form>
+    <br>
+    <form method="post" action="/">
+      <input type="radio" name="genre1" value ='Fiction'>Fiction<br>
+      <input type="radio" name="genre1" value ='Non-Fiction'>Non-Fiction<br>
+      <input type="radio" name="genre1" value ='Autobiography'>Autobiography<br>
+      <input type="radio" name="genre1" value ='Biography'>Biography<br>
+      <input type="radio" name="genre1" value ='Poetic'>Poetic<br>
+      <br>
+      <input type="submit" name="submit1" value="Get Recommendation">
+    <br>
+    <table>
+      <thead>
+        <tr>
+          {% for col in column_names2 %}
+          <th>
+            {{col}}
+          </th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in row_data2 %}
+        <tr>
+          {% for col, row_ in zip(column_names2, row) %}
+          <td>{{row_}}</td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </form>
+    <br>
+    <form method="post" action="/">
+      <input type="radio" name="genre2" value ='Adventure'>Adventure<br>
+      <input type="radio" name="genre2" value ='Drama'>Drama<br>
+      <input type="radio" name="genre2" value ='Biography'>Biography<br>
+      <input type="radio" name="genre2" value ='SciFi'>SciFi<br>
+      <input type="radio" name="genre2" value ='Comedy'>Comedy<br>
+      <input type="radio" name="genre2" value ='action'>Action<br>
+      <br>
+      <input type="submit" name="submit2" value="Get Recommendation">
+      <table>
+        <thead>
+          <tr>
+            {% for col in column_names3 %}
+            <th>
+              {{col}}
+            </th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in row_data3 %}
+          <tr>
+            {% for col, row_ in zip(column_names3, row) %}
+            <td>{{row_}}</td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </form>
+</body>
+</html>
